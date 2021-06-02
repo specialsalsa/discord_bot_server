@@ -10,7 +10,7 @@ const expressSanitizer = require('express-sanitizer');
 const router = require('./Routes/router');
 const cors = require('cors');
 // port variable - if it's not 4000 , it will be any other that is available
-const port = 4000 || process.env.PORT;
+const port = process.env.PORT;
 
 // variable that creates the Express app
 const app = express();
