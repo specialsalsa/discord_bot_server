@@ -20,7 +20,7 @@ User.init(
         },
 
         discord_user_id: {
-            type: DataTypes.INTEGER(11),
+            type: DataTypes.INTEGER(19),
             allowNull: false
         },
 
