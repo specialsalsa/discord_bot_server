@@ -18,6 +18,12 @@ User.init(
             allowNull: false,
             autoIncrement: true
         },
+
+        discord_user_id: {
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
+
         username: {
             type: DataTypes.STRING,
             allowNull: false

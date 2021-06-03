@@ -73,8 +73,8 @@ const addUser = (req, res) => {
     .query("INSERT INTO user (username, kicked, id_user_type) VALUES (:username, :kicked, :id_user_type);", {
         replacements: {
             username: usernameInput,
-            id_user_type: req.sanitize(req.body.id_user_type),
-            kicked: req.sanitize(req.body.kicked)
+            kicked: req.sanitize(req.body.kicked),
+            id_user_type: req.sanitize(req.body.id_user_type)
         }
     },
         {
