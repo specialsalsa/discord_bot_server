@@ -100,7 +100,7 @@ const deleteUser = (req, res) => {
             "DELETE FROM user WHERE user_id = :user_id;",
             {
                 replacements: {
-                    user_id: req.sanitize(req.params.id)
+                    user_id: req.sanitize(req.params.user_id)
                 }
             },
             {
