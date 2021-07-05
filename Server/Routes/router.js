@@ -26,7 +26,7 @@ const configController = require("../Controllers/configController");
 router.get("/config/:server_id", configController.getConfig);
 
 // update server config
-router.put("/config/:server_id");
+router.put("/config/:server_id", configController.setConfig);
 
 router.get("/users", userController.getUsers);
 
