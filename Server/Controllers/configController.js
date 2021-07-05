@@ -8,17 +8,12 @@ const { ServerConfig } = require("../Models/ServerConfig");
 // gets server config for selected server by id
 const getConfig = (req, res) => {
     sequelize
-        .query(
-            "SELECT * FROM server_config WHERE server_id = :server_id;",
-            {
-                replacements: {
-                    server_id: req.sanitize(req.params.server_id)
-                }
+        .query("SELECT * FROM server_config WHERE server_id = :server_id;", {
+            replacements: {
+                server_id: req.sanitize(req.params.server_id)
             },
-            {
-                model: ServerConfig
-            }
-        )
+            model: ServerConfig
+        })
         .then(data => {
             res.status(200).send(data);
         })

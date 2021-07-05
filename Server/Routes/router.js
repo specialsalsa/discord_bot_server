@@ -23,7 +23,7 @@ const configController = require("../Controllers/configController");
 // DELETE (deletes)
 
 // get server config
-router.get("/config", configController.getConfig);
+router.get("/config/:server_id", configController.getConfig);
 
 // update server config
 router.put("/config/:server_id");
