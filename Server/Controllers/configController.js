@@ -8,7 +8,7 @@ const { ServerConfig } = require("../Models/ServerConfig");
 // gets server config for selected server by id
 const getConfig = (req, res) => {
     sequelize
-        .query("SELECT * FROM server_config WHERE server_id = :server_id;", {
+        .query("SELECT * FROM server_config WHERE server_id = :server_id", {
             replacements: {
                 server_id: req.sanitize(req.params.server_id)
             },
@@ -27,7 +27,7 @@ const getConfig = (req, res) => {
 const setConfig = (req, res) => {
     sequelize
         .query(
-            "INSERT INTO server_config (command_prefix) VALUES (:command_prefix);",
+            "UPDATE server_config SET command_prefix = :command_prefix WHERE server_id = 1;",
             {
                 replacements: {
                     command_prefix: req.sanitize(req.body.command_prefix)
