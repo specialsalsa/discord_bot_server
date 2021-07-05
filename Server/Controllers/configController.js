@@ -12,7 +12,7 @@ const getConfig = (req, res) => {
             "SELECT * FROM server_config WHERE server_id = :server_id;",
             {
                 replacements: {
-                    server_id: req.sanitize(req.body.server_id)
+                    server_id: req.sanitize(req.params.server_id)
                 }
             },
             {
