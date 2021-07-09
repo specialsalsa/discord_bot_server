@@ -3,6 +3,19 @@
 // we need to know what db we run the queries
 const sequelize = require("../Database/database");
 const { ServerConfig } = require("../Models/ServerConfig");
+const WebSocket = require("ws");
+
+const wss = new WebSocket.Server({
+    port: 3000
+});
+
+const sendSampleData = () => {
+    wss.on("connection", function connection(ws) {
+        console.log("opened connection");
+        ws.send("o hai der");
+    });
+};
+
 // we need to know what MODEL we relate the queries to
 
 // gets server config for selected server by id
@@ -48,5 +61,6 @@ const setConfig = (req, res) => {
 
 module.exports = {
     getConfig,
-    setConfig
+    setConfig,
+    sendSampleData
 };
