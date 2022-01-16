@@ -22,7 +22,7 @@ const configController = require("../Controllers/configController");
 // PATCH (update 1 or 2 fields only)
 // DELETE (deletes)
 
-router.get("/config/sample", configController.sendSampleData);
+// router.get("/config/sample", configController.sendSampleData);
 
 // get server config
 router.get("/config/:server_id", configController.getConfig);
